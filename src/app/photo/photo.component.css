@@ -1,5 +1,5 @@
 .photo {
-  width: 120px;
+  width: 150px;
   background-color: #F7F7F7;
   box-shadow: 0 3px 6px rgba(0, 0, 0, .15);
   border-radius: 5px;
@@ -9,4 +9,26 @@
 
 .photo-img {
   width: 100%;
+}
+
+.photo-button {
+  background: #3498DB;
+  color: #FFFFFF;
+  border: 1px solid #F3F3F3;
+  border-radius: 3px;
+  padding: 5px;
+  transition: background-color .3s ease-in;
+  cursor: pointer;
+}
+
+.photo-button:hover {
+  background-color: #2874A6;
+}
+
+.photo-button-like {
+  background: #27AE60;
+}
+
+.photo-button-unlike {
+  background: #E74C3C;
 }

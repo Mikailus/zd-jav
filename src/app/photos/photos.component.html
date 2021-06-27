@@ -17,5 +17,7 @@
     *ngFor="let cokolwiek of photos"
     [photo]="cokolwiek"
     (deletePhoto)="deletePhoto($event)"
+    (likePhoto)="increasePhotoLike($event)"
+    (unlikePhoto)="increasePhotoUnlike($event)"
   ></app-photo>
 </div>

@@ -2,7 +2,27 @@
   <p class="photo-text">ID zdjęcia: {{ photo.id }}</p>
   <p class="photo-text">ID albumu: {{ photo.albumId }}</p>
   <p class="photo-text">Tytuł: {{ photo.title }}</p>
+  <p class="photo-text">Polubienia: {{ photo.likes }}</p>
+  <p class="photo-text">Znielubienia: {{ photo.unlikes }}</p>
   <img [src]="photo.url" class="photo-img" />
 
-  <button (click)="onDeleteClick()">Usuń</button>
+  <button class="photo-button" (click)="onDeleteClick()">Usuń</button>
+  <button
+    class="photo-button"
+    (click)="onLikeClick()"
+    [ngClass]="{
+      'photo-button-like': photo.likes >= 5
+    }"
+  >
+    Polub
+  </button>
+  <button
+    class="photo-button"
+    (click)="onUnlikeClick()"
+    [ngClass]="{
+      'photo-button-unlike': photo.unlikes >= 5
+    }"
+  >
+    Znielub
+  </button>
 </div>
