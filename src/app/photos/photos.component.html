@@ -1,16 +1,19 @@
-<button
-  (click)="togglePhotosVisibility()"
-  class="photo-button"
-  [ngClass]="{
-    'photo-button-show': shouldShowPhotos,
-    'photo-button-hide': !shouldShowPhotos
-  }"
-  [ngStyle]="{
-    color: shouldShowPhotos ? '#F1F1F1' : '#000000'
-  }"
->
-  Zmień widoczność
-</button>
+<div>
+  <button
+    (click)="togglePhotosVisibility()"
+    class="photo-button"
+    [ngClass]="{
+      'photo-button-show': shouldShowPhotos,
+      'photo-button-hide': !shouldShowPhotos
+    }"
+    [ngStyle]="{
+      color: shouldShowPhotos ? '#F1F1F1' : '#000000'
+    }"
+  >
+    Zmień widoczność
+  </button>
+  <button (click)="refreshList()">Odśwież listę</button>
+</div>
 
 <div *ngIf="shouldShowPhotos" class="photos-list">
   <app-photo
