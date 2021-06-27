@@ -1,5 +1,5 @@
 <button (click)="togglePhotosVisibility()">Zmień widoczność</button>
 
-<div *ngIf="shouldShowPhotos">
+<div *ngIf="shouldShowPhotos" class="photos-list">
   <app-photo *ngFor="let cokolwiek of photos" [photo]="cokolwiek"> </app-photo>
 </div>

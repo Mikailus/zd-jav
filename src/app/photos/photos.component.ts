@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Photo {
-  id: number;
-  albumId: number;
-  title: string;
-  url: string;
-}
+import { Photo } from '../interfaces/photo.interface';
 
 @Component({
   selector: 'app-photos',
