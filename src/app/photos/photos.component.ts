@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Photo } from '../interfaces/photo.interface';
 import { PhotosService } from '../photos.service';
 
@@ -7,7 +7,7 @@ import { PhotosService } from '../photos.service';
   templateUrl: './photos.component.html',
   styleUrls: ['./photos.component.css'],
 })
-export class PhotosComponent {
+export class PhotosComponent implements OnInit {
   public photos: Photo[] = [];
   public shouldShowPhotos: boolean = true;
 
@@ -15,6 +15,10 @@ export class PhotosComponent {
     this.photosService.getPhotos().subscribe((photos: Photo[]) => {
       this.photos = photos;
     });
+  }
+
+  public ngOnInit(): void {
+    console.log('Init hook');
   }
 
   public togglePhotosVisibility(): void {
@@ -28,11 +32,11 @@ export class PhotosComponent {
 
   public increasePhotoLike(id: number): void {
     this.photosService.increasePhotoLike(id);
-    // this.photos = this.photosService.getPhotos();
+    this.photos = this.photosService.getUpdatedPhotos();
   }
 
   public increasePhotoUnlike(id: number): void {
     this.photosService.increasePhotoUnlike(id);
-    // this.photos = this.photosService.getPhotos();
+    this.photos = this.photosService.getUpdatedPhotos();
   }
 }
