@@ -1,5 +1,21 @@
-<button (click)="togglePhotosVisibility()">Zmień widoczność</button>
+<button
+  (click)="togglePhotosVisibility()"
+  class="photo-button"
+  [ngClass]="{
+    'photo-button-show': shouldShowPhotos,
+    'photo-button-hide': !shouldShowPhotos
+  }"
+  [ngStyle]="{
+    color: shouldShowPhotos ? '#F1F1F1' : '#000000'
+  }"
+>
+  Zmień widoczność
+</button>
 
 <div *ngIf="shouldShowPhotos" class="photos-list">
-  <app-photo *ngFor="let cokolwiek of photos" [photo]="cokolwiek"> </app-photo>
+  <app-photo
+    *ngFor="let cokolwiek of photos"
+    [photo]="cokolwiek"
+    (deletePhoto)="deletePhoto($event)"
+  ></app-photo>
 </div>

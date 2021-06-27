@@ -33,4 +33,12 @@ export class PhotosComponent {
   public togglePhotosVisibility(): void {
     this.shouldShowPhotos = !this.shouldShowPhotos;
   }
+
+  public deletePhoto(id: number): void {
+    const filterFunction = function (photo: Photo) {
+      return photo.id !== id;
+    };
+
+    this.photos = this.photos.filter(filterFunction);
+  }
 }

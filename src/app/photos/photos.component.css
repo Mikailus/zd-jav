@@ -1,3 +1,28 @@
 .photos-list {
   display: flex;
 }
+
+.photo-button {
+  display: block;
+  margin: 0 auto;
+
+  background: #3498DB;
+  color: #FFFFFF;
+  border: 1px solid #F3F3F3;
+  border-radius: 3px;
+  padding: 10px;
+  transition: background-color .3s ease-in;
+  cursor: pointer;
+}
+
+.photo-button-show {
+  background: #27AE60;
+}
+
+.photo-button-hide {
+  background: #E74C3C;
+}
+
+.photo-button:hover {
+  background-color: yellow;
+}

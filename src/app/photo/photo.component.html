@@ -3,4 +3,6 @@
   <p class="photo-text">ID albumu: {{ photo.albumId }}</p>
   <p class="photo-text">Tytuł: {{ photo.title }}</p>
   <img [src]="photo.url" class="photo-img" />
+
+  <button (click)="onDeleteClick()">Usuń</button>
 </div>

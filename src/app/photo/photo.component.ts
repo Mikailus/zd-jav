@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Photo } from '../interfaces/photo.interface';
 
 @Component({
@@ -8,8 +8,13 @@ import { Photo } from '../interfaces/photo.interface';
 })
 export class PhotoComponent implements OnInit {
   @Input() public photo: Photo = {} as Photo;
+  @Output() public deletePhoto: EventEmitter<number> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  public onDeleteClick(): void {
+    this.deletePhoto.emit(this.photo.id);
+  }
 }
