@@ -66,4 +66,8 @@ export class PhotosComponent implements OnInit {
     this.minValue = this.minValue - this.pagination;
     this.maxValue = this.maxValue - this.pagination;
   }
+
+  public updatePhoto(photo: Photo): void {
+    this.photosService.updatePhoto(photo);
+  }
 }

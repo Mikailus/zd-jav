@@ -21,6 +21,7 @@ export class PhotoComponent implements OnInit, OnDestroy, AfterViewInit {
   @Output() public deletePhoto: EventEmitter<number> = new EventEmitter();
   @Output() public likePhoto: EventEmitter<number> = new EventEmitter();
   @Output() public unlikePhoto: EventEmitter<number> = new EventEmitter();
+  @Output() public editPhoto: EventEmitter<Photo> = new EventEmitter();
 
   @ViewChild('templateReference', { read: ElementRef })
   reference: ElementRef | null = null;
@@ -67,5 +68,9 @@ export class PhotoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   public onUnlikeClick(): void {
     this.unlikePhoto.emit(this.photo.id);
+  }
+
+  public updatePhoto(): void {
+    this.editPhoto.emit(this.photo);
   }
 }

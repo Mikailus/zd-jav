@@ -10,6 +10,7 @@ import { BoostValuePipe } from './boost-value.pipe';
 import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { PhotoDetailComponent } from './photo-detail/photo-detail.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'photos', component: PhotosComponent },
@@ -30,7 +31,12 @@ const routes: Routes = [
     UsersComponent,
     PhotoDetailComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

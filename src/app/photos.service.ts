@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
@@ -56,6 +56,22 @@ export class PhotosService {
       .subscribe();
 
     this.photos = this.photos.filter(filterFunction);
+  }
+
+  public updatePhoto(photo: Photo): void {
+    const options = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json; charset=UTF-8',
+      }),
+    };
+
+    this.http
+      .put(
+        'https://jsonplaceholder.typicode.com/photos' + '/' + photo.id,
+        photo,
+        options
+      )
+      .subscribe();
   }
 
   public increasePhotoLike(id: number): void {

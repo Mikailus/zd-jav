@@ -2,6 +2,9 @@
   <p class="photo-text">ID zdjęcia: {{ photo.id }}</p>
   <p class="photo-text">ID albumu: {{ photo.albumId }}</p>
   <p class="photo-text">Tytuł: {{ photo.title | uppercase }}</p>
+  <label>
+    <input type="text" [(ngModel)]="photo.title" />
+  </label>
   <p class="photo-text">Polubienia: {{ photo.likes | boostValue: 100 }}</p>
   <p class="photo-text">Znielubienia: {{ photo.unlikes | boostValue: 10 }}</p>
   <p class="photo-text">Data: {{ photo.creationDate | date: "dd.MM.yyyy" }}</p>
@@ -26,4 +29,6 @@
   >
     Znielub
   </button>
+
+  <button class="photo-button" (click)="updatePhoto()">Zaktualizuj</button>
 </div>
