@@ -12,9 +12,12 @@
   Zmień widoczność
 </button>
 
+<button class="photo-button" (click)="decreasePagination()">Poprzednie</button>
+<button class="photo-button" (click)="increasePagination()">Następne</button>
+
 <div *ngIf="shouldShowPhotos" class="photos-list">
   <app-photo
-    *ngFor="let cokolwiek of photos"
+    *ngFor="let cokolwiek of photos | slice: minValue:maxValue"
     [photo]="cokolwiek"
     (deletePhoto)="deletePhoto($event)"
     (likePhoto)="increasePhotoLike($event)"

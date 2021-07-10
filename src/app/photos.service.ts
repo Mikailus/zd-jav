@@ -22,9 +22,13 @@ export class PhotosService {
               ...photo,
               likes: 0,
               unlikes: 0,
+              creationDate: new Date(),
             };
           });
         }),
+        // map((photos: Photo[]) => {
+        //   return photos.slice(0, 350);
+        // }),
         tap((photos: Photo[]) => {
           this.photos = photos;
         })

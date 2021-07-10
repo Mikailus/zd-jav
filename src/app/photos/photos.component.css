@@ -4,7 +4,7 @@
 }
 
 .photo-button {
-  display: block;
+  display: inline-block;
   margin: 0 auto;
 
   background: #3498DB;
@@ -25,5 +25,5 @@
 }
 
 .photo-button:hover {
-  background-color: yellow;
+  background-color: #3498BD;
 }

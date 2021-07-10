@@ -5,4 +5,5 @@ export interface Photo {
   url: string;
   likes: number;
   unlikes: number;
+  creationDate: Date;
 }
