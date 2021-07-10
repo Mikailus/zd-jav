@@ -35,6 +35,13 @@ export class PhotosService {
       );
   }
 
+  public getPhotoById(photoId: string): Observable<Photo> {
+    // this.http.get('https://jsonplaceholder.typicode.com/photos' + '/' + photoId);
+    return this.http.get<Photo>(
+      `https://jsonplaceholder.typicode.com/photos/${photoId}`
+    );
+  }
+
   public getUpdatedPhotos(): Photo[] {
     return this.photos;
   }
@@ -43,6 +50,10 @@ export class PhotosService {
     const filterFunction = function (photo: Photo) {
       return photo.id !== id;
     };
+
+    this.http
+      .delete('https://jsonplaceholder.typicode.com/photos' + '/' + id)
+      .subscribe();
 
     this.photos = this.photos.filter(filterFunction);
   }
